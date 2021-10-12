@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,7 +58,30 @@ public class Main {
         System.out.println("Size of TreeSet after adding 9 elements with 1 duplicate: " + pizzaToppingsHashSet.size());
         System.out.println("TreeSet: " + ptTreeSet);
 
+        //Create some "Friend" objects
+        Friend fred = new Friend("Fred","Flintstone","705-555-1234");
+        Friend barney = new Friend("Barney","Rubble","705-555-1235");
+        Friend wilma = new Friend("Wilma","Flintstone","705-555-1236");
 
+        //Add Friend's to an arraylist
+        ArrayList<Friend> friendsAL = new ArrayList<>();
+        friendsAL.addAll(Arrays.asList(fred, barney, wilma));
+        System.out.println(friendsAL);
+        Collections.sort(friendsAL);
+        System.out.println("sorted: "+friendsAL);
+
+        //HashSet
+        HashSet<Friend> friendsHS = new HashSet<>();
+        friendsHS.addAll(friendsAL);
+        friendsHS.add(fred);
+        System.out.println("Friends hashset size: "+ friendsHS.size());
+        System.out.println("Friends hashSet: "+friendsHS);
+
+        //TreeSet
+        TreeSet<Friend> friendsTS = new TreeSet<>();
+        friendsTS.addAll(friendsAL);
+        System.out.println("Friends TreeSet size: "+ friendsTS.size());
+        System.out.println("Friends TreeSet: "+friendsTS);
 
     }
 }

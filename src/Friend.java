@@ -1,4 +1,4 @@
-public class Friend {
+public class Friend implements Comparable<Friend>{
     private String firstName, lastName, phoneNumber;
 
     public Friend(String firstName, String lastName, String phoneNumber) {
@@ -29,5 +29,15 @@ public class Friend {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String toString()
+    {
+        return String.format("%s %s, phone #: %s",firstName,lastName,phoneNumber);
+    }
+
+    @Override
+    public int compareTo(Friend otherFriend) {
+        return phoneNumber.compareTo(otherFriend.phoneNumber);
     }
 }
